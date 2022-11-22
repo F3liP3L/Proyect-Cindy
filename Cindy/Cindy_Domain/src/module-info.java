@@ -1,0 +1,2 @@
+module Cindy_Domain {
+}
