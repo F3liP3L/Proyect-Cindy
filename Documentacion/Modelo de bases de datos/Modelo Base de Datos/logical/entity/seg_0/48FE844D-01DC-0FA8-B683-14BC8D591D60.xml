@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="48FE844D-01DC-0FA8-B683-14BC8D591D60" name="detalle_evento">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:02:17 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codigo" id="EF5AE99D-A828-F90B-A8F2-C60DA72AD93A">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:02:29 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_reserva" id="DB67A314-E982-78A4-7995-81A9DC67A17D">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:02:39 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_entrega" id="07C174EE-912F-FC49-2A58-3316676581F5">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:02:54 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo1" id="B459659E-DD8F-46F8-F92C-028AFD4EDE60">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:12:39 UTC</createdTime>
+<generatorID>6054B8C3-2741-E1C1-03C4-AAF72461B91F</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<referedAttribute>591B80AE-EDE3-8A89-1A17-74F982D1488D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estado" id="F7D4B3E9-9743-0888-88D9-356A008BFAFE">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 02:15:58 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="ED963B52-A89D-B8BC-3896-D0D4D80E906C" name="detalle_evento PK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:02:35 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EF5AE99D-A828-F90B-A8F2-C60DA72AD93A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

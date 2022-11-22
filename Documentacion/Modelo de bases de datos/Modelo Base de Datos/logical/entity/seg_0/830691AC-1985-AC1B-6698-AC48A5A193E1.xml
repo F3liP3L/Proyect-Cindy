@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="830691AC-1985-AC1B-6698-AC48A5A193E1" name="evento">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:00:03 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codigo" id="591B80AE-EDE3-8A89-1A17-74F982D1488D">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:01:06 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="5E61A514-934C-DEE4-6D84-9051762762D4">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:01:18 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo1" id="53AC1F6D-6108-1DB0-982C-1947AF3D5F2F">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:12:15 UTC</createdTime>
+<generatorID>05C9E84B-2090-E6E1-A78B-6B661C51F03E</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<referedAttribute>41AF5FB5-7427-E609-86D1-C292834C8AA0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo2" id="BABF2723-5AAC-541C-1C31-FC3846C7FAC0">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 02:06:50 UTC</createdTime>
+<generatorID>245C0712-C01B-0EAE-79F2-A8D429E25DF4</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<referedAttribute>B8E5DFB3-9C1C-48C3-4DB6-6256192CC206</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="585316CE-1B3B-F3C8-C0E1-3F88712CD9DC" name="evento PK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:01:16 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>591B80AE-EDE3-8A89-1A17-74F982D1488D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

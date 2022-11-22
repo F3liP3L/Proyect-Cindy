@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1B5D7880-AFC7-9303-469F-131877A38722" name="cliente">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:19:52 UTC</createdTime>
+<generatorID>64471289-EFDC-F6EB-D015-3AD89E9E6027</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<ordsAlias>persona</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigo" id="2D5E97C3-B4EF-069B-67D8-FF7C04B17B6E">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:19:52 UTC</createdTime>
+<generatorID>41AF5FB5-7427-E609-86D1-C292834C8AA0</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DNI" id="959DC7A4-08F7-C0FD-7314-F26BC41AFBE8">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:19:52 UTC</createdTime>
+<generatorID>3E3E05CE-8057-7EE8-9547-0AFBC0EBAE2F</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellido" id="097F20D5-B642-F4FA-CC1C-9648B90093D4">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:19:52 UTC</createdTime>
+<generatorID>3368393D-DB8B-B530-FF49-C5C912CD7F5C</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="8C7CBBA0-9C09-4F99-48BD-F309589C0DAC">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:19:52 UTC</createdTime>
+<generatorID>44BD4187-D4AF-EBEB-29D8-A235C7181897</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="correo" id="26BF42B3-6383-2FCA-49E8-F57E74A8B8D0">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 02:12:51 UTC</createdTime>
+<generatorID>F728397E-5C7B-C96C-5F36-CD8373A8CD3A</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>256</dataTypeSize>
+<ownDataTypeParameters>256,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="clave" id="38FC42C4-0D6D-98B5-A268-CFA603C3FD27">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 02:12:51 UTC</createdTime>
+<generatorID>77F5FE0F-39F9-B078-C53A-8E8AEEE3F867</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefono" id="A50D0193-AD0F-B6BF-A74B-CED828E7B71E">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 02:12:51 UTC</createdTime>
+<generatorID>182CC3FC-EA5F-7990-5EBF-E4DEAE6E6F73</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="77A422AA-02B1-13AD-F486-AE9243BB94C9" name="cliente_PK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:19:52 UTC</createdTime>
+<generatorID>193DA85D-D8B8-27ED-07A3-C9EFE7FDF310</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2D5E97C3-B4EF-069B-67D8-FF7C04B17B6E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

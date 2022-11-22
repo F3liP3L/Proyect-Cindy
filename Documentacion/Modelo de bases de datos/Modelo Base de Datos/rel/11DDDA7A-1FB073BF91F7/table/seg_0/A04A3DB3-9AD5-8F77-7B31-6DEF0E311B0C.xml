@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A04A3DB3-9AD5-8F77-7B31-6DEF0E311B0C" name="evento">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:19:52 UTC</createdTime>
+<generatorID>830691AC-1985-AC1B-6698-AC48A5A193E1</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigo" id="3B8B4D7D-9463-D9B8-FCAF-67E24936990F">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:19:52 UTC</createdTime>
+<generatorID>591B80AE-EDE3-8A89-1A17-74F982D1488D</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="F253DADE-B6BF-C568-41EC-0A46B92B7CCE">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:19:52 UTC</createdTime>
+<generatorID>5E61A514-934C-DEE4-6D84-9051762762D4</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cliente_codigo" id="4DE6BB86-890A-6B4C-93BE-093CBD35D749">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:19:52 UTC</createdTime>
+<generatorID>53AC1F6D-6108-1DB0-982C-1947AF3D5F2F</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9480DCC7-DF64-4F40-8292-71138DDE22D5" referredColumn="2D5E97C3-B4EF-069B-67D8-FF7C04B17B6E"/>
+</associations>
+</Column>
+<Column name="salon_codigo" id="BCEB1A19-46B2-EC1C-8460-5EEE29FF858F">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 02:12:51 UTC</createdTime>
+<generatorID>BABF2723-5AAC-541C-1C31-FC3846C7FAC0</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="56D57B8E-9EF5-DA15-BF44-291EE4D989DF" referredColumn="FD4A090F-689A-9610-CBF3-BF7E66BF36D6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6254C1C1-A12C-08C4-97B4-C43583D38C22" name="evento_PK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:19:52 UTC</createdTime>
+<generatorID>585316CE-1B3B-F3C8-C0E1-3F88712CD9DC</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3B8B4D7D-9463-D9B8-FCAF-67E24936990F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AD34F878-26E6-FBEA-4D15-84173557FF9D" name="evento_cliente_FK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 01:19:52 UTC</createdTime>
+<generatorID>05C9E84B-2090-E6E1-A78B-6B661C51F03E</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4DE6BB86-890A-6B4C-93BE-093CBD35D749"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C12AB1F8-8989-5085-6363-1B9A772F1248" name="evento_salon_FK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 02:12:51 UTC</createdTime>
+<generatorID>245C0712-C01B-0EAE-79F2-A8D429E25DF4</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BCEB1A19-46B2-EC1C-8460-5EEE29FF858F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

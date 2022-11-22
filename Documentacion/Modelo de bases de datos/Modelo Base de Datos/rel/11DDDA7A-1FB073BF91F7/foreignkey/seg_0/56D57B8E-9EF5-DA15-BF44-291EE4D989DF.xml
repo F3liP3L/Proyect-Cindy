@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="56D57B8E-9EF5-DA15-BF44-291EE4D989DF" containerWithKeyObject="A04A3DB3-9AD5-8F77-7B31-6DEF0E311B0C" localFKIndex="C12AB1F8-8989-5085-6363-1B9A772F1248" name="evento_salon_FK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 02:12:51 UTC</createdTime>
+<generatorID>245C0712-C01B-0EAE-79F2-A8D429E25DF4</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<referredTableLongName>salon</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B9AD09FB-24E0-698D-FAE0-393806C82F89</referredTableID>
+<keyObject>140EC001-38E1-6597-F6C3-ADA240AEEE95</keyObject>
+<referredKeyID>140EC001-38E1-6597-F6C3-ADA240AEEE95</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>codigo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
