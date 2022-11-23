@@ -7,38 +7,37 @@ import java.util.List;
 
 import edu.ctda.cindy.crosscutting.exception.service.ServiceCustomException;
 import edu.ctda.cindy.crosscutting.helper.DateHelper;
-import edu.ctda.cindy.crosscutting.helper.UUIDHelper;
 import edu.ctda.cindy.crosscutting.messages.Messages;
 import edu.ctda.cindy.data.dao.factory.DAOFactory;
 import edu.ctda.cindy.domain.EventDTO;
-import edu.ctda.cindy.service.bussines.event.CreateEventUseCase;
 import edu.ctda.cindy.service.bussines.event.FindIfSalonAvailableUseCase;
+import edu.ctda.cindy.service.bussines.event.UpdateEventUseCase;
 
-public class CreateEventUseCaseImpl implements CreateEventUseCase{
+public class UpdateEventUseCaseImpl implements UpdateEventUseCase {
 
 	private final DAOFactory factory;
 	private final FindIfSalonAvailableUseCase findIfSalonAvailableUseCase;
 	
-	public CreateEventUseCaseImpl(DAOFactory factory) {
+	public UpdateEventUseCaseImpl(DAOFactory factory) {
 		this.factory = factory;
 		this.findIfSalonAvailableUseCase = new FindIfSalonAvailableUseCaseImpl(factory);
 	}
 
-
 	@Override
 	public void execute(EventDTO event) {
-		
-		// verificar si el salon no se encuentra reservado para la fecha dispuesta.
 		
 		List<EventDTO> results = findIfSalonAvailableUseCase.execute(event.getSalon());
 		
 		if(!checkAvailabilityDates(results, event)) {
-			throw ServiceCustomException.createUserException(Messages.CreateEventUseCaseImpl.BUSSINES_EVENT_EXIST_IN_DATE);
+			throw ServiceCustomException.createUserException(Messages.UpdateEventUseCaseImpl.BUSSINES_EVENT_EXIST_IN_DATE);
 		}
+		/*
+		event.setName(event.getName());
+		event.setReservationDate(event.getReservationDate());
+		*/
 		
-		event.setId(UUIDHelper.getNewUUID());
+		factory.getEventDAO().update(event);
 		
-		factory.getEventDAO().create(event);
 	}
 	
 	private static boolean checkAvailabilityDates (List<EventDTO> events, EventDTO eventCreate) {
@@ -49,5 +48,5 @@ public class CreateEventUseCaseImpl implements CreateEventUseCase{
 		}
 		return exist;
 	}
-
+	
 }

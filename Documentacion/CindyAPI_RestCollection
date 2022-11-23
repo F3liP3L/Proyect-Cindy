@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "5e89e17b-ea50-4d9b-a658-82a231547491",
+		"name": "CindyAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Salones de eventos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/customer/salon",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"salon"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"felipe\",\r\n    \"surname\": \"lora torres\",\r\n    \"phone\": \"3225874278\",\r\n    \"cedula\": \"100010135\",\r\n    \"email\": \"felipecardona@gmail.com\",\r\n    \"password\": \"f3lip3100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Evento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"boda de dafa\",\r\n    \"customer\": {\r\n        \"id\": \"b10e5631-d405-4475-bf3f-3951a18bb697\"\r\n    },\r\n    \"reservationDate\": \"2023-01-05\",\r\n    \"deliveryDate\": \"2023-01-06\",\r\n    \"salon\": {\r\n        \"id\":\"4982c20d-db8b-472b-b07c-d590f7d2a55b\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Evento",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/event/6e2fb294-6a99-4ee1-a6ba-f8671f281a40",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"event",
+						"6e2fb294-6a99-4ee1-a6ba-f8671f281a40"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Eventos del Mes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/event/december",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"event",
+						"december"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar evento",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"e395d34a-bff2-453e-a279-012508e80372\",\r\n    \"name\": \"boda de margarita\",\r\n    \"reservationDate\": \"2023-03-08\",\r\n    \"deliveryDate\": \"2023-03-12\",\r\n    \"state\": true,\r\n    \"salon\": {\r\n        \"id\":\"4982c20d-db8b-472b-b07c-d590f7d2a55b\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"event"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

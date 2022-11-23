@@ -200,8 +200,8 @@ public class Messages {
 			super();
 		}
 		
-		public static final String BUSSINES_EVENT_EXIST_IN_DATE = "The event you are trying to create is not available on the arranged dates";
-		public static final String BUSSINES_EVENT_UNEXPECTED = " There was an unexpected trying to register a event problem";
+		public static final String BUSSINES_EVENT_EXIST_IN_DATE = "The event you are trying to update is not available on the arranged dates";
+		public static final String BUSSINES_EVENT_UPDATE_UNEXPECTED = " There was an unexpected trying to update a event problem";
 		
 	}
 	
@@ -277,6 +277,10 @@ public class Messages {
 		public static final String EVENT_DELETED_SUCCESSFULLY = "The event has been delete successfully";
 		public static final String EVENT_DELETED_ERROR = "There was an error trying delete the event";
 		public static final String EVENT_DELETED_UNEXPECTED_ERROR = "There was a unexpected problem trying to delete the event";
+		
+		public static final String EVENT_UPDATE_SUCCESSFULLY = "The event has been update successfully";
+		public static final String EVENT_UPDATE_ERROR = "There was an error trying update the event";
+		public static final String EVENT_UPDATE_UNEXPECTED_ERROR = "There was a unexpected problem trying to update the event";
 
 	}
 	
@@ -293,9 +297,9 @@ public class Messages {
 		public static final String PASSWORD_IS_INVALID_ERROR = "the password does not meet the proper length";
 	}
 	
-	public static class CreateServiceValidator {
+	public static class CreateEventValidator {
 		
-		private CreateServiceValidator() {
+		private CreateEventValidator() {
 			super();
 		}
 		
