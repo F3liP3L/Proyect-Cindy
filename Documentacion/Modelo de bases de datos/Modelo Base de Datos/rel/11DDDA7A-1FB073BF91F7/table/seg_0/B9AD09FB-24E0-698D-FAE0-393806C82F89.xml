@@ -32,6 +32,17 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="direccion" id="36EAF6B0-9F82-C172-712F-E28BE016C703">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-23 01:16:02 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="140EC001-38E1-6597-F6C3-ADA240AEEE95" name="salon_PK">

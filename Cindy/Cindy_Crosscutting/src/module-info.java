@@ -1,2 +1,0 @@
-module Cindy_Crosscutting {
-}

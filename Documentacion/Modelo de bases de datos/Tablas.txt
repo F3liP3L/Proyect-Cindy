@@ -1,0 +1,39 @@
+
+CREATE TABLE cliente (
+    codigo   CHARACTER VARYING(50) NOT NULL,
+    dni      CHARACTER VARYING(50) NOT NULL,
+    apellido CHARACTER VARYING(100) NOT NULL,
+    nombre   CHARACTER VARYING(100) NOT NULL,
+    correo   CHARACTER VARYING(256) NOT NULL,
+    clave    CHARACTER VARYING(50) NOT NULL,
+    telefono CHARACTER VARYING(50) NOT NULL
+);
+
+ALTER TABLE cliente ADD CONSTRAINT cliente_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE evento (
+    codigo         CHARACTER VARYING(50) NOT NULL,
+    nombre         CHARACTER VARYING(50) NOT NULL,
+    cliente_codigo CHARACTER VARYING(50) NOT NULL,
+    salon_codigo   CHARACTER VARYING(50) NOT NULL,
+    fecha_reserva  DATE NOT NULL,
+    fecha_entrega  DATE NOT NULL,
+    estado         BOOLEAN NOT NULL
+);
+
+ALTER TABLE evento ADD CONSTRAINT evento_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE salon (
+    codigo CHARACTER VARYING(50) NOT NULL,
+    nombre CHARACTER VARYING(50) NOT NULL
+);
+
+ALTER TABLE salon ADD CONSTRAINT salon_pk PRIMARY KEY ( codigo );
+
+ALTER TABLE evento
+    ADD CONSTRAINT evento_cliente_fk FOREIGN KEY ( cliente_codigo )
+        REFERENCES cliente ( codigo );
+
+ALTER TABLE evento
+    ADD CONSTRAINT evento_salon_fk FOREIGN KEY ( salon_codigo )
+        REFERENCES salon ( codigo );

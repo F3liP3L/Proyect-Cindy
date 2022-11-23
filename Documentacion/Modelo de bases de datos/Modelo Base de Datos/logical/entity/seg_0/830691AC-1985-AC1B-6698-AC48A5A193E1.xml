@@ -54,7 +54,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="codigo2" id="BABF2723-5AAC-541C-1C31-FC3846C7FAC0">
 <createdBy>Felipe</createdBy>
@@ -70,6 +70,43 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_reserva" id="EAFB7266-4AAF-8263-A914-F97B71A79F93">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 20:57:07 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_entrega" id="9CE9CC1C-282B-2E91-436F-4F2FE954863B">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 20:57:15 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estado" id="2FECCEAB-F655-1231-C330-AA06F5661FD0">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 20:57:23 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

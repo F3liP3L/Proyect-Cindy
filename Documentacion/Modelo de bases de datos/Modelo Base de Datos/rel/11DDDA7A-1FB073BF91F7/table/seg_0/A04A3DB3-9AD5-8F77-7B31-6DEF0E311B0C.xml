@@ -41,7 +41,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -57,12 +57,46 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="56D57B8E-9EF5-DA15-BF44-291EE4D989DF" referredColumn="FD4A090F-689A-9610-CBF3-BF7E66BF36D6"/>
 </associations>
+</Column>
+<Column name="fecha_reserva" id="7DE5BD67-E4A0-D77F-FEE7-73956710EA20">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 20:59:05 UTC</createdTime>
+<generatorID>EAFB7266-4AAF-8263-A914-F97B71A79F93</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_entrega" id="40E5129F-0CDA-6D4D-8305-5D2954E82386">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 20:59:05 UTC</createdTime>
+<generatorID>9CE9CC1C-282B-2E91-436F-4F2FE954863B</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estado" id="4D1036BD-FBE9-4D02-55B5-3ED7A5F07F46">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-22 20:59:05 UTC</createdTime>
+<generatorID>2FECCEAB-F655-1231-C330-AA06F5661FD0</generatorID>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
