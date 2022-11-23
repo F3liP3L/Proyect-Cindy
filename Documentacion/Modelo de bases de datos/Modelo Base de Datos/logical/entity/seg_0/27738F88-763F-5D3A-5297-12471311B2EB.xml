@@ -41,6 +41,19 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="direccion" id="13E45710-1DC6-8C72-5AD8-F857E3F8CB13">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-23 17:47:44 UTC</createdTime>
+<ownerDesignName>Modelo Base de Datos </ownerDesignName>
+<engineerTo>
+<item key="11DDDA7A-67C2-D99B-1CDC-1FB073BF91F7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="7AD4C839-9625-4285-E007-70E59F69CD03" name="salon PK">
