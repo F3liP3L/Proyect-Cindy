@@ -28,11 +28,40 @@ public class DateHelper {
 		return Date.valueOf(date);
 	}
 	
+	public static final LocalDate getDateALocalDate(Date date) {
+		return date.toLocalDate();
+	}
+	
+	public static final boolean isBetweenDate(LocalDate initDate, LocalDate endDate, LocalDate compareDate) {
+		boolean isBetween = false;
+		if (initDate.isBefore(compareDate) && endDate.isAfter(compareDate)) {
+			isBetween = true;
+		}
+		return isBetween;
+	}
+	
+	public static final boolean isBefore(LocalDate initDate, LocalDate endDate) {
+		boolean isBefore = false;
+		if(initDate.isBefore(endDate)) {
+			isBefore = true;
+		}
+		return isBefore;
+	}
+	
+	public static final boolean isBeforeToday(LocalDate date) {
+		return date.isBefore(LocalDate.now());
+	}
+	
 	
 	public static void main(String[] args) {
 		LocalDate fecha = DateHelper.getDefaultDate();
+		LocalDate fechaHoy = DateHelper.currentDate();
+		LocalDate fechaIntermedia = DateHelper.currentDate().plusDays(5);
+		LocalDate fechaDespues = DateHelper.currentDate().plusDays(4);
 		
-		System.out.println("the date defect is: " + fecha + "\n this is a date is: " + getLocalDateADate(fecha));
+		System.out.println("the date defect is: " + fecha.getMonth().toString() + "\n this is a date is: " + getLocalDateADate(fecha));
+		System.out.println("the es menor que hoy: " + DateHelper.isBeforeToday(fechaHoy));
+		DateHelper.isBetweenDate(fechaHoy, fechaDespues, fechaIntermedia);
 	}
 
 }

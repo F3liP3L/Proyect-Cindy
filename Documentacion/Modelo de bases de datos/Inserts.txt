@@ -1,0 +1,4 @@
+INSERT INTO public.salon(
+	codigo, nombre, direccion)
+	VALUES ('4982c20d-db8b-472b-b07c-d590f7d2a55b', 'Salon de Bodas Porvenir', 'Cl. 49 #5130B'),
+           ('574d235b-d067-4a91-9905-13db8bbc3783', 'Salon de San Antonio', 'Cra. 55b #22-30');

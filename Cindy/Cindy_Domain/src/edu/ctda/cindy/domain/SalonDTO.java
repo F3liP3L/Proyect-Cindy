@@ -1,12 +1,12 @@
 package edu.ctda.cindy.domain;
 
-import java.util.UUID;
 import static edu.ctda.cindy.crosscutting.helper.StringHelper.EMPTY;
 import static edu.ctda.cindy.crosscutting.helper.StringHelper.applyTrim;
 import static edu.ctda.cindy.crosscutting.helper.UUIDHelper.getDefaultUUID;
-import static edu.ctda.cindy.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.ctda.cindy.crosscutting.helper.UUIDHelper.getUUIDAsString;
 import static edu.ctda.cindy.crosscutting.helper.UUIDHelper.getUUIDFromString;
+
+import java.util.UUID;
 
 public class SalonDTO {
 	
@@ -15,7 +15,7 @@ public class SalonDTO {
 	private String address;
 	
 	public SalonDTO() {
-		setId(getNewUUID());
+		setId(getDefaultUUID(id));
 		setAddress(EMPTY);
 		setName(EMPTY);
 	}

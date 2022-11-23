@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.UUID;
 
 import edu.ctda.cindy.crosscutting.exception.data.DataCustomException;
+import edu.ctda.cindy.crosscutting.helper.ObjectHelper;
+import edu.ctda.cindy.crosscutting.helper.StringHelper;
 import edu.ctda.cindy.crosscutting.messages.Messages;
 import edu.ctda.cindy.data.dao.CustomerDAO;
 import edu.ctda.cindy.data.dao.relational.DAORelational;
@@ -86,14 +88,18 @@ public class CustomerPostgresqlDAO extends DAORelational implements CustomerDAO 
 
 	@Override
 	public List<CustomerDTO> find(CustomerDTO customer) {
+		
+		var parameters = new ArrayList<Object>();
 
 		final var sqlBuilder = new StringBuilder();
 
 		createSelectFrom(sqlBuilder);
+		
+		createWhere(sqlBuilder, customer, parameters);
 
 		createOrderBy(sqlBuilder);
 
-		return prepareAndExecuteQuery(sqlBuilder);
+		return prepareAndExecuteQuery(sqlBuilder, parameters);
 	}
 	
 	private final void createSelectFrom(final StringBuilder sqlBuilder) {
@@ -107,10 +113,26 @@ public class CustomerPostgresqlDAO extends DAORelational implements CustomerDAO 
 		sqlBuilder.append("        FROM cliente ");
 	}
 	
+	private final void setParameterValues(final PreparedStatement preparedStatement, final List<Object> parameters) {
+		try {
+			for (int index = 0; index < parameters.size(); index++) {
+				preparedStatement.setObject(index + 1, parameters.get(index));
+			}
+		} catch (final SQLException exception) {
+			throw DataCustomException.createTechnicalException(
+					Messages.CustomerPostgresqlDAO.TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY, exception);
+		} catch (final Exception exception) {
+			throw DataCustomException.createTechnicalException(
+					Messages.CustomerPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY, exception);
+		}
+	}
+	
 
-	private final List<CustomerDTO> prepareAndExecuteQuery(StringBuilder sqlBuilder) {
+	private final List<CustomerDTO> prepareAndExecuteQuery(StringBuilder sqlBuilder, List<Object> parameters) {
 		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())){
 
+			setParameterValues(preparedStatement, parameters);
+			
 			return executeQuery(preparedStatement);
 
 		}  catch (final DataCustomException exception) {
@@ -125,6 +147,20 @@ public class CustomerPostgresqlDAO extends DAORelational implements CustomerDAO 
 	private final void createOrderBy(final StringBuilder stringBuilder) {
 		stringBuilder.append("Order By name ASC ");
 	}
+	
+	private final void createWhere(final StringBuilder sqlBuilder, final CustomerDTO customer, final List<Object> parameters) {
+
+		// var setWhere = false;
+		
+		if (!ObjectHelper.isNull(customer)) {
+
+			if (!customer.getEmail().equals(StringHelper.EMPTY)) {
+				sqlBuilder.append("WHERE correo = ? ");
+				parameters.add(customer.getEmail());
+			}
+		}
+	}
+
 
 	private final List<CustomerDTO> fillResults (final ResultSet resultset) {
 		try {

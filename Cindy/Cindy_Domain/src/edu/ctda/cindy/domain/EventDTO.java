@@ -1,16 +1,16 @@
 package edu.ctda.cindy.domain;
 
-import static edu.ctda.cindy.crosscutting.helper.UUIDHelper.getUUIDAsString;
-import static edu.ctda.cindy.crosscutting.helper.StringHelper.EMPTY;
-import static edu.ctda.cindy.crosscutting.helper.StringHelper.applyTrim;
-import static edu.ctda.cindy.crosscutting.helper.UUIDHelper.getDefaultUUID;
-import static edu.ctda.cindy.crosscutting.helper.UUIDHelper.getNewUUID;
-import static edu.ctda.cindy.crosscutting.helper.UUIDHelper.getUUIDFromString;
+import static edu.ctda.cindy.builder.CustomerDTOBuilder.getCustomerDTOBuilder;
+import static edu.ctda.cindy.builder.SalonDTOBuilder.getSalonDTOBuilder;
 import static edu.ctda.cindy.crosscutting.helper.DateHelper.getDefaultDate;
 import static edu.ctda.cindy.crosscutting.helper.DateHelper.getLocalDateADate;
 import static edu.ctda.cindy.crosscutting.helper.ObjectHelper.getDefaultIfNull;
-import static edu.ctda.cindy.builder.SalonDTOBuilder.getSalonDTOBuilder;
-import static edu.ctda.cindy.builder.CustomerDTOBuilder.getCustomerDTOBuilder;
+import static edu.ctda.cindy.crosscutting.helper.StringHelper.EMPTY;
+import static edu.ctda.cindy.crosscutting.helper.StringHelper.applyTrim;
+import static edu.ctda.cindy.crosscutting.helper.UUIDHelper.getDefaultUUID;
+import static edu.ctda.cindy.crosscutting.helper.UUIDHelper.getUUIDAsString;
+import static edu.ctda.cindy.crosscutting.helper.UUIDHelper.getUUIDFromString;
+
 import java.sql.Date;
 import java.util.UUID;
 
@@ -25,7 +25,7 @@ public class EventDTO {
 	private SalonDTO salon;
 	
 	public EventDTO() {
-		setId(getNewUUID());
+		setId(getDefaultUUID(id));
 		setName(EMPTY);
 		setCustomer(getCustomerDTOBuilder().build());
 		setReservationDate(getLocalDateADate(getDefaultDate()));
@@ -113,6 +113,10 @@ public class EventDTO {
 	
 	public String getIdAsString() {
 		return getUUIDAsString(getId());
+	}
+
+	public static EventDTO create(SalonDTO salon) {
+		return new EventDTO(getDefaultUUID(null), EMPTY, getCustomerDTOBuilder().build(), getLocalDateADate(getDefaultDate()), getLocalDateADate(getDefaultDate()), true, salon);
 	}
 
 }

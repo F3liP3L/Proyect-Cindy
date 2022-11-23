@@ -28,7 +28,7 @@ public class EventPostgresqlDAO extends DAORelational implements EventDAO {
 
 	@Override
 	public void create(EventDTO event) {
-		final var sqlInsert = "INSERT INTO evento(codigo, nombre, cliente_codigo, salon_codigo, fecha_reserva, fecha_entrega, estado VALUES (?, ?, ?, ?, ?, ?, ?)";
+		final var sqlInsert = "INSERT INTO evento(codigo, nombre, cliente_codigo, salon_codigo, fecha_reserva, fecha_entrega, estado) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
 
 			preparedStatement.setString(1, event.getIdAsString());
@@ -61,6 +61,8 @@ public class EventPostgresqlDAO extends DAORelational implements EventDAO {
 			preparedStatement.setBoolean(5, event.isState());
 			preparedStatement.setString(6, event.getIdAsString());
 			
+			preparedStatement.executeUpdate();
+			
 		} catch (SQLException exception) {
 			throw DataCustomException
 					.createTechnicalException(Messages.CustomerPostgresqlDAO.TECHNICAL_PROBLEM_UPDATE_CUSTOMER, exception);
@@ -77,6 +79,8 @@ public class EventPostgresqlDAO extends DAORelational implements EventDAO {
 
 		try (final var preparedStatement = getConnection().prepareStatement(sqlDelete)) {
 			preparedStatement.setString(1, idAsString);
+			
+			preparedStatement.executeUpdate();
 		} catch (SQLException exception) {
 			throw DataCustomException
 					.createTechnicalException(Messages.EventPostgresqlDAO.TECHNICAL_PROBLEM_DELETE_EVENT_DTO, exception);

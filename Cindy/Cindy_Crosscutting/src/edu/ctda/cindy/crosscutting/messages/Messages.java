@@ -118,28 +118,11 @@ public class Messages {
 	}
 	
 	
-	public static class SubserviceTypePostgresqlDAO {
-		
-		private SubserviceTypePostgresqlDAO() {
-				super();
-		}
-		
-		public static final String TECHNICAL_PROBLEM_FILL_SUB_SALON = "There was a problem trying to fill a desired SubserviceType in PostgresqlDAOFactory ";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_SUB_SALON = "There was an unexpected problem trying to fill a sub SubserviceType in PostgresqlDAOFactory";
-		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific SuberviceType";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific SubserviceType";
-		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific Subsalon";
-		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific serviceType";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
-	}
-	
-	
 		public static class EventPostgresqlDAO {
 	
-		private EventPostgresqlDAO() {
-				super();
-		}
+			private EventPostgresqlDAO() {
+					super();
+			}
 		
 		public static final String TECHNICAL_PROBLEM_CREATE_EVENT = "There was a problem trying to create the desired event in PostgresqlDAOFactory ";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_EVENT = "There was an unexpected problem trying to create the event in PostgresqlDAOFactory";
@@ -194,7 +177,8 @@ public class Messages {
 			super();
 		}
 		
-		public static final String BUSSINES_CUSTOMER_EXISTS = " The customer is already registered ";
+		public static final String BUSSINES_CUSTOMER_EXISTS = " The customer is already registered";
+		public static final String BUSSINES_CUSTOMER_EXISTS_MAIL = " The customer is already registered with the mail";
 		public static final String BUSSINES_CUSTOMER_UNEXPECTED = " There was an unexpected trying to register a customer problem";
 		
 	}
@@ -205,8 +189,30 @@ public class Messages {
 			super();
 		}
 		
-		public static final String BUSSINES_EVENT_EXISTS = " The service is already registered ";
-		public static final String BUSSINES_EVENT_UNEXPECTED = " There was an unexpected trying to register a service problem";
+		public static final String BUSSINES_EVENT_EXIST_IN_DATE = "The event you are trying to create is not available on the arranged dates";
+		public static final String BUSSINES_EVENT_UNEXPECTED = " There was an unexpected trying to register a event problem";
+		
+	}
+	
+	public static class UpdateEventUseCaseImpl {
+		
+		private UpdateEventUseCaseImpl() {
+			super();
+		}
+		
+		public static final String BUSSINES_EVENT_EXIST_IN_DATE = "The event you are trying to create is not available on the arranged dates";
+		public static final String BUSSINES_EVENT_UNEXPECTED = " There was an unexpected trying to register a event problem";
+		
+	}
+	
+	public static class DeleteEventUseCaseImpl {
+		
+		private DeleteEventUseCaseImpl() {
+			super();
+		}
+		
+		public static final String BUSSINES_EVENT_DELETE_EVENT = "The event you are trying to delete doesnt exist";
+		public static final String BUSSINES_EVENT_DELETE_UNEXPECTED = " There was an unexpected trying to delet a event problem";
 		
 	}
 	
@@ -222,31 +228,30 @@ public class Messages {
 		
 	}
 	
-	public static class FindDocumentIdentificationUseCaseImpl {
+	public static class FindSalonUseCaseImpl {
 		
-		private FindDocumentIdentificationUseCaseImpl() {
+		private FindSalonUseCaseImpl() {
 			super();
 		}
 		
-		public static final String BUSSINES_DOCUMENT_IDENTIFICATION_EXISTS = " The identification document already exists, please choose a valid one";
-		public static final String BUSSINES_DOCUMENT_IDENTIFICATION_UNEXPECTED = " unexpected problem when trying to register the identification document";
+		public static final String BUSSINES_SALON_UNEXPECTED = " There was an unexpected problem in the FindSalonCommand";
 		
 	}
 	
-	public static class FindServiceTypeUseCaseImpl {
+	public static class FindEventByMonthUseCaseImpl {
 		
-		private FindServiceTypeUseCaseImpl() {
+		private FindEventByMonthUseCaseImpl() {
 			super();
 		}
 		
-		public static final String BUSSINES_SALON_UNEXPECTED = " There was an unexpected problem in the FindServiceTypeCommand";
+		public static final String BUSSINES_EVENT_MONTH_UNEXPECTED = " There was an unexpected problem in the FindEventByMonthCommand";
 		
 	}
 	
 	
-	public static class ResponseUserController {
+	public static class ResponseCustomerController {
 		
-		private ResponseUserController (){
+		private ResponseCustomerController (){
 			super();
 		}
 		
@@ -259,21 +264,25 @@ public class Messages {
 		public static final String CUSTOMER_LOGIN_UNEXPECTED_ERROR = "There was a unexpected problem trying to login the customer";
 	}
 	
-	public static class ResponseServiceController {
+	public static class ResponseEventController {
 		
-		private ResponseServiceController (){
+		private ResponseEventController (){
 			super();
 		}
 		
-		public static final String EVENT_CREATED_SUCCESSFULLY = "The service has been created successfully";
-		public static final String EVENT_CREATED_ERROR = "There was an error trying created the service";
-		public static final String EVENT_CREATED_UNEXPECTED_ERROR = "There was a unexpected problem trying to created the service";
+		public static final String EVENT_CREATED_SUCCESSFULLY = "The event has been created successfully";
+		public static final String EVENT_CREATED_ERROR = "There was an error trying created the event";
+		public static final String EVENT_CREATED_UNEXPECTED_ERROR = "There was a unexpected problem trying to created the event";
+		
+		public static final String EVENT_DELETED_SUCCESSFULLY = "The event has been delete successfully";
+		public static final String EVENT_DELETED_ERROR = "There was an error trying delete the event";
+		public static final String EVENT_DELETED_UNEXPECTED_ERROR = "There was a unexpected problem trying to delete the event";
 
 	}
 	
-	public static class CreateUserValidator {
+	public static class CreateCustomerValidator {
 		
-		private CreateUserValidator() {
+		private CreateCustomerValidator() {
 			super();
 		}
 		

@@ -12,6 +12,9 @@ import edu.ctda.cindy.crosscutting.messages.Messages;
 import edu.ctda.cindy.data.dao.CustomerDAO;
 import edu.ctda.cindy.data.dao.EventDAO;
 import edu.ctda.cindy.data.dao.SalonDAO;
+import edu.ctda.cindy.data.dao.relational.postgresql.CustomerPostgresqlDAO;
+import edu.ctda.cindy.data.dao.relational.postgresql.EventPostgresqlDAO;
+import edu.ctda.cindy.data.dao.relational.postgresql.SalonPostgresqlDAO;
 
 public class PostgresqlDAOFactory extends DAOFactory {
 	
@@ -19,6 +22,7 @@ private Connection connection;
 
 	PostgresqlDAOFactory(){
 		super();
+		openConnection(); // Borralo despueeeees
 	}
 
 	@Override
@@ -73,16 +77,16 @@ private Connection connection;
 
 	@Override
 	public CustomerDAO getCustomerDAO() {
-		return null;
+		return new CustomerPostgresqlDAO(connection);
 	}
 
 	@Override
 	public EventDAO getEventDAO() {
-		return null;
+		return new EventPostgresqlDAO(connection);
 	}
 
 	@Override
 	public SalonDAO getSalonDAO() {
-		return null;
+		return new SalonPostgresqlDAO(connection);
 	}
 }

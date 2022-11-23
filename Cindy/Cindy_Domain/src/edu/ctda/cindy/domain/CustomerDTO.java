@@ -20,7 +20,7 @@ public class CustomerDTO {
 	private String password;	
 	
 	public CustomerDTO() {
-		setId(getNewUUID());
+		setId(getDefaultUUID(id));
 		setName(EMPTY);
 		setSurname(EMPTY);
 		setPhone(EMPTY);
@@ -48,6 +48,10 @@ public class CustomerDTO {
 	public static CustomerDTO create(final String id, final String name, final String surname, final String phone, final String cedula, final String email,
 			final String password) {
 		return new CustomerDTO(getUUIDFromString(id), name, surname, phone, cedula, email, password);
+	}
+	
+	public static CustomerDTO create(final String email) {
+		return new CustomerDTO (getNewUUID(), EMPTY, EMPTY, EMPTY, EMPTY, email, EMPTY);
 	}
 	
 	public UUID getId() {
