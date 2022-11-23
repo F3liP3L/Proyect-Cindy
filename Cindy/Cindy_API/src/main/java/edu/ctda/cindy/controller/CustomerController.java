@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.ctda.cindy.controller.response.Response;
+import edu.ctda.cindy.controller.validator.Validator;
+import edu.ctda.cindy.controller.validator.customer.CreateCustomerValidator;
 import edu.ctda.cindy.crosscutting.exception.CindyCustomException;
+import edu.ctda.cindy.crosscutting.messages.Message;
 import edu.ctda.cindy.crosscutting.messages.Messages;
 import edu.ctda.cindy.domain.CustomerDTO;
 import edu.ctda.cindy.domain.SalonDTO;
@@ -40,11 +43,20 @@ public class CustomerController {
 		HttpStatus httpStatus = HttpStatus.OK;
 
 		try {
+			Validator<CustomerDTO> validator = new CreateCustomerValidator();
+			List<Message> messages = validator.validate(customer);
+
+			if (messages.isEmpty()) {
 				createCustomerCommand.execute(customer);
 				List<CustomerDTO> data = new ArrayList<>();
 				data.add(customer);
 				response.setData(data);
 				response.addSuccessMessage(Messages.ResponseCustomerController.CUSTOMER_CREATED_SUCCESSFULLY);
+			} else {
+				httpStatus = HttpStatus.BAD_REQUEST;
+				response.setMessages(messages);
+			}
+				
 		} catch (final CindyCustomException exception) {
 			httpStatus = HttpStatus.BAD_REQUEST;
 

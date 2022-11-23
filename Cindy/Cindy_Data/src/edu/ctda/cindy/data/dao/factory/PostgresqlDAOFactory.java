@@ -22,7 +22,7 @@ private Connection connection;
 
 	PostgresqlDAOFactory(){
 		super();
-		openConnection(); // Borralo despueeeees
+		//openConnection(); // Borralo despueeeees
 	}
 
 	@Override

@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.ctda.cindy.controller.response.Response;
+import edu.ctda.cindy.controller.validator.Validator;
+import edu.ctda.cindy.controller.validator.event.CreateEventValidator;
 import edu.ctda.cindy.crosscutting.exception.CindyCustomException;
+import edu.ctda.cindy.crosscutting.messages.Message;
 import edu.ctda.cindy.crosscutting.messages.Messages;
 import edu.ctda.cindy.domain.EventDTO;
 import edu.ctda.cindy.service.command.CreateEventCommand;
@@ -44,11 +47,20 @@ public class EventController {
 		HttpStatus httpStatus = HttpStatus.OK;
 
 		try {
+			
+			Validator<EventDTO> validator = new CreateEventValidator();
+			List<Message> messages = validator.validate(event);
+			
+			if(messages.isEmpty()) {
 				createEventCommand.execute(event);
 				List<EventDTO> data = new ArrayList<>();
 				data.add(event);
 				response.setData(data);
 				response.addSuccessMessage(Messages.ResponseEventController.EVENT_CREATED_SUCCESSFULLY);
+			} else {
+				httpStatus = HttpStatus.BAD_REQUEST;
+				response.setMessages(messages);
+			}
 		} catch (final CindyCustomException exception) {
 			httpStatus = HttpStatus.BAD_REQUEST;
 
@@ -110,11 +122,19 @@ public class EventController {
 		HttpStatus httpStatus = HttpStatus.OK;
 
 		try {
+			Validator<EventDTO> validator = new CreateEventValidator();
+			List<Message> messages = validator.validate(event);
+			
+			if (messages.isEmpty()) {
 				updateEventCommand.execute(event);
 				List<EventDTO> data = new ArrayList<>();
 				data.add(event);
 				response.setData(data);
 				response.addSuccessMessage(Messages.ResponseEventController.EVENT_UPDATE_SUCCESSFULLY);
+			} else {
+				httpStatus = HttpStatus.BAD_REQUEST;
+				response.setMessages(messages);
+			}
 		} catch (final CindyCustomException exception) {
 			httpStatus = HttpStatus.BAD_REQUEST;
 

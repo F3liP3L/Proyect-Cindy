@@ -33,7 +33,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"felipe\",\r\n    \"surname\": \"lora torres\",\r\n    \"phone\": \"3225874278\",\r\n    \"cedula\": \"100010135\",\r\n    \"email\": \"felipecardona@gmail.com\",\r\n    \"password\": \"f3lip3100\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Diego cardona\",\r\n    \"surname\": \"lora torres\",\r\n    \"phone\": \"3225874278\",\r\n    \"cedula\": \"145454545\",\r\n    \"email\": \"felipeperreo@gmail.com\",\r\n    \"password\": \"eventos12.23\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -62,7 +62,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"boda de dafa\",\r\n    \"customer\": {\r\n        \"id\": \"b10e5631-d405-4475-bf3f-3951a18bb697\"\r\n    },\r\n    \"reservationDate\": \"2023-01-05\",\r\n    \"deliveryDate\": \"2023-01-06\",\r\n    \"salon\": {\r\n        \"id\":\"4982c20d-db8b-472b-b07c-d590f7d2a55b\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"name\": \"Mi boda feliz!!!\",\r\n    \"customer\": {\r\n        \"id\": \"b10e5631-d405-4475-bf3f-3951a18bb697\"\r\n    },\r\n    \"reservationDate\": \"2023-10-05\",\r\n    \"deliveryDate\": \"2023-10-15\",\r\n    \"salon\": {\r\n        \"id\":\"4982c20d-db8b-472b-b07c-d590f7d2a55b\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -120,7 +120,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/event/december",
+					"raw": "http://localhost:8080/api/event/january",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -129,7 +129,7 @@
 					"path": [
 						"api",
 						"event",
-						"december"
+						"january"
 					]
 				}
 			},
@@ -142,7 +142,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": \"e395d34a-bff2-453e-a279-012508e80372\",\r\n    \"name\": \"boda de margarita\",\r\n    \"reservationDate\": \"2023-03-08\",\r\n    \"deliveryDate\": \"2023-03-12\",\r\n    \"state\": true,\r\n    \"salon\": {\r\n        \"id\":\"4982c20d-db8b-472b-b07c-d590f7d2a55b\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"id\": \"09a6b5eb-dbeb-4641-bb77-4cab83c257a6\",\r\n    \"name\": \"Mi Boda gitana :D\",\r\n    \"reservationDate\": \"2024-04-04\",\r\n    \"deliveryDate\": \"2024-04-08\",\r\n    \"state\": true,\r\n    \"salon\": {\r\n        \"id\":\"4982c20d-db8b-472b-b07c-d590f7d2a55b\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
