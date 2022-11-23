@@ -51,17 +51,4 @@ public class DateHelper {
 	public static final boolean isBeforeToday(LocalDate date) {
 		return date.isBefore(LocalDate.now());
 	}
-	
-	
-	public static void main(String[] args) {
-		LocalDate fecha = DateHelper.getDefaultDate();
-		LocalDate fechaHoy = DateHelper.currentDate();
-		LocalDate fechaIntermedia = DateHelper.currentDate().plusDays(5);
-		LocalDate fechaDespues = DateHelper.currentDate().plusDays(4);
-		
-		System.out.println("the date defect is: " + fecha.getMonth().toString() + "\n this is a date is: " + getLocalDateADate(fecha));
-		System.out.println("the es menor que hoy: " + DateHelper.isBeforeToday(fechaHoy));
-		DateHelper.isBetweenDate(fechaHoy, fechaDespues, fechaIntermedia);
-	}
-
 }

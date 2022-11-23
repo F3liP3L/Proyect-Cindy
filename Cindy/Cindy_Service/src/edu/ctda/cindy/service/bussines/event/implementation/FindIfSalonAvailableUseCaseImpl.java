@@ -36,16 +36,5 @@ public class FindIfSalonAvailableUseCaseImpl implements FindIfSalonAvailableUseC
 		}
 		return exist;
 	}
-	
-	
-	/*
-	public static void main(String[] args) {
-		FindIfSalonAvailableUseCaseImpl findIfSalonAv = new FindIfSalonAvailableUseCaseImpl(DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL));
-		DAOFactory factory = DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL);
-		SalonDTO salon = DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL).getSalonDAO().find().get(0);
-		System.out.println("el salon es: " + salon.getname());
-		factory.getEventDAO().find(null).forEach(elem -> System.out.println(elem.getName()));
-		findIfSalonAv.execute(salon).forEach(elem -> System.out.println(elem.getName()));
-	}*/
 
 }
