@@ -10,6 +10,7 @@ import edu.ctda.cindy.crosscutting.messages.Messages;
 import edu.ctda.cindy.domain.EventDTO;
 import static edu.ctda.cindy.crosscutting.helper.DateHelper.getDateALocalDate;
 import static edu.ctda.cindy.crosscutting.helper.DateHelper.isBeforeToday;
+import static edu.ctda.cindy.crosscutting.helper.DateHelper.isAfterOrEqual;
 
 public class CreateEventValidator implements Validator<EventDTO> {
 
@@ -19,6 +20,7 @@ public class CreateEventValidator implements Validator<EventDTO> {
 		validateName(dto.getName(), messages);
 		validateDate(dto.getReservationDate(), messages);
 		validateDate(dto.getDeliveryDate(), messages);
+		validateDateDelivery(dto.getDeliveryDate(),dto.getReservationDate(),messages);
 		return messages;
 	}
 	
@@ -31,6 +33,11 @@ public class CreateEventValidator implements Validator<EventDTO> {
 	private void validateDate(Date date, List<Message> messages) {
 		if(isBeforeToday(getDateALocalDate(date))) {
 			messages.add(Message.createErrorMessage(Messages.CreateEventValidator.DATE_IS_INVALID_ERROR));
+		}
+	}
+	private void validateDateDelivery(Date initDate, Date endDate, List<Message> messages) {
+		if(!isAfterOrEqual(getDateALocalDate(initDate), getDateALocalDate(endDate))) {
+			messages.add(Message.createErrorMessage(Messages.CreateEventValidator.DATE_DELIVERY_IS_INVALID_ERROR));
 		}
 	}
 

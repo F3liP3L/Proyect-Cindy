@@ -34,18 +34,30 @@ public class DateHelper {
 	
 	public static final boolean isBetweenDate(LocalDate initDate, LocalDate endDate, LocalDate compareDate) {
 		boolean isBetween = false;
-		if (initDate.isBefore(compareDate) && endDate.isAfter(compareDate)) {
+		if (isBeforeOrEqual(initDate, compareDate) && isAfterOrEqual(endDate, compareDate)) {
 			isBetween = true;
 		}
 		return isBetween;
 	}
 	
-	public static final boolean isBefore(LocalDate initDate, LocalDate endDate) {
+	public static final boolean rangesOverlap(LocalDate startA, LocalDate endA, LocalDate startB, LocalDate endB) {
+	    return !startA.isAfter(endB) && !startB.isAfter(endA);
+	}
+	
+	public static final boolean isBeforeOrEqual(LocalDate initDate, LocalDate endDate) {
 		boolean isBefore = false;
-		if(initDate.isBefore(endDate)) {
+		if(initDate.isBefore(endDate) || initDate.compareTo(endDate) == 0) {
 			isBefore = true;
 		}
 		return isBefore;
+	}
+	
+	public static final boolean isAfterOrEqual(LocalDate initDate, LocalDate endDate) {
+		boolean isEqual = false;
+		if(initDate.isAfter(endDate) || initDate.compareTo(endDate) == 0) {
+			isEqual = true;
+		}
+		return isEqual;
 	}
 	
 	public static final boolean isBeforeToday(LocalDate date) {

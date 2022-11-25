@@ -307,6 +307,7 @@ public class Messages {
 		
 		public static final String NAME_IS_INVALID_ERROR = "Name cannot be empty";
 		public static final String DATE_IS_INVALID_ERROR = "the date entered cannot be earlier than today";
+		public static final String DATE_DELIVERY_IS_INVALID_ERROR = "the delivery date entered cannot be prior to the reservation date";
 	}
 	
 }

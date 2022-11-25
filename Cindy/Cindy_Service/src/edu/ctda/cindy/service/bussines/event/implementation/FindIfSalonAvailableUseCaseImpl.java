@@ -1,9 +1,7 @@
 package edu.ctda.cindy.service.bussines.event.implementation;
 
 import java.util.List;
-
 import edu.ctda.cindy.data.dao.factory.DAOFactory;
-import edu.ctda.cindy.data.enumeration.DAOFactoryType;
 import edu.ctda.cindy.domain.EventDTO;
 import edu.ctda.cindy.domain.SalonDTO;
 import edu.ctda.cindy.service.bussines.event.FindEventUseCase;

@@ -1,12 +1,12 @@
 package edu.ctda.cindy.service.bussines.event.implementation;
 
 import static edu.ctda.cindy.crosscutting.helper.DateHelper.getDateALocalDate;
-import static edu.ctda.cindy.crosscutting.helper.DateHelper.isBetweenDate;
+import static edu.ctda.cindy.crosscutting.helper.DateHelper.getLocalDateADate;
+import static edu.ctda.cindy.crosscutting.helper.DateHelper.rangesOverlap;
 
 import java.util.List;
 
 import edu.ctda.cindy.crosscutting.exception.service.ServiceCustomException;
-import edu.ctda.cindy.crosscutting.helper.DateHelper;
 import edu.ctda.cindy.crosscutting.helper.UUIDHelper;
 import edu.ctda.cindy.crosscutting.messages.Messages;
 import edu.ctda.cindy.data.dao.factory.DAOFactory;
@@ -28,9 +28,10 @@ public class CreateEventUseCaseImpl implements CreateEventUseCase{
 	@Override
 	public void execute(EventDTO event) {
 		
-		// verificar si el salon no se encuentra reservado para la fecha dispuesta.
-		
 		List<EventDTO> results = findIfSalonAvailableUseCase.execute(event.getSalon());
+		
+		event.setReservationDate(getLocalDateADate(getDateALocalDate(event.getReservationDate()).plusDays(1)));
+		event.setDeliveryDate(getLocalDateADate(getDateALocalDate(event.getDeliveryDate()).plusDays(1)));
 		
 		if(!checkAvailabilityDates(results, event)) {
 			throw ServiceCustomException.createUserException(Messages.CreateEventUseCaseImpl.BUSSINES_EVENT_EXIST_IN_DATE);
@@ -38,12 +39,13 @@ public class CreateEventUseCaseImpl implements CreateEventUseCase{
 		
 		event.setId(UUIDHelper.getNewUUID());
 		
+		
 		factory.getEventDAO().create(event);
 	}
 	
-	private static boolean checkAvailabilityDates (List<EventDTO> events, EventDTO eventCreate) {
+	private static boolean checkAvailabilityDates (List<EventDTO> events, EventDTO event) {
 		boolean exist = false;
-		List<EventDTO> results = events.stream().filter(event -> isBetweenDate(getDateALocalDate(event.getReservationDate()), getDateALocalDate(event.getDeliveryDate()), getDateALocalDate(eventCreate.getReservationDate())) || DateHelper.isBefore(getDateALocalDate(eventCreate.getDeliveryDate()), getDateALocalDate(event.getReservationDate()))).toList();
+		List<EventDTO> results = events.stream().filter(evt -> rangesOverlap(getDateALocalDate(evt.getReservationDate()),getDateALocalDate(evt.getDeliveryDate()), getDateALocalDate(event.getReservationDate()), getDateALocalDate(event.getDeliveryDate())) && evt.isState()).toList();
 		if(results.isEmpty()) {
 			exist = true;
 		}
