@@ -26,13 +26,4 @@ public class FindIfSalonAvailableUseCaseImpl implements FindIfSalonAvailableUseC
 		
 		return results;
 	}
-	
-	private static boolean SalonIsAvailability (List<EventDTO> events) {
-		boolean exist = false;
-		if(events.stream().filter(EventDTO::isState).toList().isEmpty()) {
-			exist = true;
-		}
-		return exist;
-	}
-
 }
